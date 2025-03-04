@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import Shirt1 from "../images/shirt1.webp";
 import shirt2 from "../images/shirt2.jpeg";
 import shirt3 from "../images/shirt3.webp";
 import shirt4 from "../images/shirt4.avif";
 import shirt5 from "../images/shirt5.avif";
+import Relatedproducts from "./Relatedproducts";
 
 
 export default function Product() {
+
+    const [image,setImage] = useState(Shirt1)
+
   return (
     <div className="text-black">
       <div className="container">
@@ -14,18 +18,18 @@ export default function Product() {
           <div className="col-md-6 mt-4">
             {" "}
             <img
-              src={Shirt1}
+              src={image}
               alt=""
               className="img-fluid"
               style={{ width: "100%", height: "500px", objectFit: "contain" }}
             />
             <hr />
             <div className="d-flex">
-            <img src={shirt2} alt=""  className="img-fluid" style={{ width: "100%", height: "180px", objectFit: "contain" } } />
+            <img src={shirt2}  className="img-fluid" style={{ width: "100%", height: "180px", objectFit: "contain" } } onClick={(e)=>{setImage(e.target.src)}} />
               
-            <img src={shirt3} alt="" className="img-fluid" style={{ width: "100%", height: "180px", objectFit: "contain" } } />
-            <img src={shirt4} alt=""  className="img-fluid" style={{ width: "100%", height: "180px", objectFit: "contain" } }/>
-            <img src={shirt5} alt="" className="img-fluid" style={{ width: "100%", height: "180px", objectFit: "contain" } } />
+            <img src={shirt3} alt="" className="img-fluid" style={{ width: "100%", height: "180px", objectFit: "contain" } } onClick={(e)=>{setImage(e.target.src)}} />
+            <img src={shirt4} alt=""  className="img-fluid" style={{ width: "100%", height: "180px", objectFit: "contain" }  } onClick={(e)=>{setImage(e.target.src)}}/>
+            <img src={shirt5} alt="" className="img-fluid" style={{ width: "100%", height: "180px", objectFit: "contain" } } onClick={(e)=>{setImage(e.target.src)}} />
 
             </div>
            
@@ -89,7 +93,7 @@ export default function Product() {
         <h4>Additional Details</h4>
         <table className='table table-bordered' >
                         <tr>
-                            <th>Pack of</th>
+                            <th >Pack of</th>
                             <td>1</td>
                         </tr>
                         <tr>
@@ -123,6 +127,8 @@ export default function Product() {
                     </table>
 
         </div>
+        <hr />
+        <Relatedproducts/>
       </div>
     </div>
   );

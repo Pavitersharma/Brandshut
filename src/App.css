@@ -14,3 +14,18 @@
     list-style: none;
     padding-left: 0;
 }
+
+.qty{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 120px;
+    gap: 10px;
+}
+
+.qty button{
+    border: none;
+}
+
+.hide{
+    display: none !important;
+}
