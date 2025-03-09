@@ -8,6 +8,7 @@ import Listing from "./component/Listing";
 import Product from "./component/Product";
 import Cart from "./component/Cart";
 import Checkout from "./component/Checkout";
+import Dashboard from "./component/Dashboard";
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
           <Route path="/final" element={<Product/>}/>
           <Route path="/cart" element={<Cart/>}/>
           <Route path="/checkout" element={<Checkout/>}/>
+          <Route path="/dashboard" element={<Dashboard/>}/>
+      
+          
           
         </Routes>
 
